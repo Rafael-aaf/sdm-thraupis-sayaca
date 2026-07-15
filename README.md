@@ -1,4 +1,4 @@
-# thraupis_sayaca_sdm
+# Modelagem de distribuição de espécie (SDM) para Thraupis sayaca
 
 [![R](https://img.shields.io/badge/R-blue?logo=r&logoColor=white)](https://www.r-project.org/)
 [![MaxEnt](https://img.shields.io/badge/Model-MaxEnt-orange)](https://biodiversityinformatics.amnh.org/open_source/maxent/)
