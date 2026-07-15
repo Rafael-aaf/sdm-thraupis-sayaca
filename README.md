@@ -18,7 +18,7 @@ O projeto usa dois tipos de dados: ocorrências da espécie e variáveis ambient
 
 - Ocorrências: arquivo `thraupis_sayaca_ocorrences2.csv`, contendo as colunas `decimalLongitude` e `decimalLatitude`, usadas para extrair as coordenadas de ocorrência da espécie. Os dados são uma amostra aleatória de 5000 registros, extraída de um conjunto do GBIF.
 
-- Variáveis ambientais: dois arquivos no formato `.grd`, `env_current.grd` com as condições ambientais atuais e `env_forecast.grd` com a projeção futura. Cada stack contém, entre outras camadas, `tmin` (temperatura mínima) e `precip` (precipitação). A variável `tmin` é dividida por 10 antes do uso, já que a temperatura é armazenada em décimos de grau.
+- Variáveis ambientais: dois arquivos no formato `.grd`, `env_current.grd` com as condições ambientais atuais e `env_forecast.grd` com a projeção futura (2050). Cada stack contém, entre outras camadas, `tmin` (temperatura mínima) e `precip` (precipitação). A variável `tmin` é dividida por 10 antes do uso, já que a temperatura é armazenada em décimos de grau.
 
 ## Modelo
 
@@ -28,7 +28,7 @@ Para avaliar o desempenho do modelo, os registros foram divididos em 80% para tr
 
 A conversão das predições contínuas para presença/ausência foi realizada utilizando o limiar spec_sens.
 
-![curva ROC](thraupis_sayaca_auc.png)
+![curva ROC](imagens/thraupis_sayaca_auc.png)
 
 ## Como executar
 
@@ -41,5 +41,15 @@ install.packages(c("dismo", "dplyr", "ggplot2"))
 
 ## Resultados
 
+O modelo MaxEnt gerou o mapa de adequabilidade ambiental para as condições atuais, indicando as regiões com maior favorabilidade climática para a ocorrência da espécie:
 
-![Mapa de adequabilidade](imagens/thraupis_sayaca.png)
+![Adequabilidade atual](imagens/thraupis_sayaca_adeq_atual.png)
+
+
+A projeção para as condições ambientais futuras, do ano 2050, resultou no seguinte mapa de adequabilidade:
+
+![Adequabilidade futura](imagens/thraupis_sayaca_adeq_futura.png)
+
+A diferença entre as duas projeções (futura menos atual) é apresentada abaixo, destacando as áreas de mudança na adequabilidade ambiental. Em vermelho, regiões onde a adequabilidade tende a diminuir, e em verde, regiões onde tende a aumentar.
+
+![Mudança de adequabilidade](imagens/thraupis_sayaca_mudanca_adeq.png)
