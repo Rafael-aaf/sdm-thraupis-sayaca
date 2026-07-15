@@ -29,7 +29,7 @@ ext_brasil <- extent(-75, -28, -35, 6)
 plot(predictions, ext=ext_brasil, main="Adequabilidade Atual - T. sayaca")
 points(thraupis_sayaca_locations, pch="+", cex=0.5)
 
-tr <- threshold(eval, stat='prevalence')
+tr <- threshold(eval, stat='spec_sens')
 
 plot(predictions > tr, ext=ext_brasil, main="Presença/Ausência Atual")
 points(thraupis_sayaca_locations, pch="+", cex=0.5)
@@ -45,4 +45,3 @@ plot(predictions_forecast > tr, ext=ext_brasil, main="Presença/Ausência Futura
 plot(predictions_forecast - predictions,
      ext=ext_brasil,
      main="Mudança de Adequabilidade")
-

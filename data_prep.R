@@ -42,5 +42,3 @@ maxent_model
 
 
 
-
-
